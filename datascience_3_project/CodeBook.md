@@ -5,7 +5,7 @@ date: 05/24/2015
 output: result.txt
 ---
  
-Project Description
+##Project Description
 In this project, we re-organize the UCI HAR dataset to calculate
 the average of each variable for each activity and each subject.
  
@@ -23,7 +23,6 @@ www.smartlab.ws
 ==================================================================
 The raw data can be downloaded from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
  
-Notes on the original (raw) data 
 ##The dataset includes the following files:
 =========================================
 - 'README.txt'
