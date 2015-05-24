@@ -64,7 +64,7 @@ for(i in 1:length(ac)){
     }
 }
 
-##  Step 9. Arrage result by subject and then write result to file.
+##  Step 9. Arrange result by subject and then write result to file.
 result<-arrange(result, subject)
 write.table(result, file="./result.txt", row.name=FALSE)
 
