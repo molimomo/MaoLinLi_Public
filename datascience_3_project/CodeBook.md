@@ -102,23 +102,21 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete list of variables of each feature vector is available in 'features.txt'
 
 ###Guide to create the tidy data file
-Step 1. Extract feature names from feature.txt
+Step 1. Load text files into corresponding tables
 
-Step 2. Load tran data and test data into tables.
+Step 2. Merge training/test set
 
-Step 3. Merge training/test set and training/test labels.
+Step 3. Extract the indice of the measurements on the mean and standard deviation.
 
-Step 4. Extract the indice of the measurements on the mean and standard deviation.
+Step 4. Extract required column from original dataset.
 
-Step 5. Extract required column from original dataset.
+Step 5. Append subjects and label to target matrix.
 
-Step 6. Append subjects and label to target matrix.
+Step 6. Extract descriptive activity names from activity label.txt and then mapping it to target dataset.
 
-Step 7. Extract descriptive activity names from activity label.txt and then mapping it to target dataset.
+Step 7. Calcualte the average of each variable for each activity and each subject.
 
-Step 8. Calcualte the average of each variable for each activity and each subject.
-
-Step 9. Arrange result by subject and then write result to file.
+Step 8. Arrange result by subject and then write result to file.
 
 ##Description of the variables in result.txt file
 There are 180 rows and 81 cols in result.txt.

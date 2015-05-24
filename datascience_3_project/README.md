@@ -32,21 +32,47 @@ The last 2 variables are "subject" and "activity".
 The detailed information about variables can be found in feature_info.txt.
 
 #The procedure of data processing
-Step 1. Extract feature names from feature.txt
-Here we read text file "feature.txt" into features data frame.
+Step 1. Load text files into corresponding tables
 
-Step 2. Load tran data and test data into tables.
+Here we read text files into data frames with read.table().
+* features : Feature names
+* activity: Descriptive activity names
+* trainData : Training set
+* testData: Test set
+* trainLabel: Training labels
+* testLabel: Test labels
+* trainSubject: Training subjects
+* testSubject: Test subjects
 
-Step 3. Merge training/test set and training/test labels.
+Step 2. Merge training/test set
 
-Step 4. Extract the indice of the measurements on the mean and standard deviation.
+Here we merge traingin set and test test with rbind().
+* original: trainOriginal + testOriginal (original dataset)
 
-Step 5. Extract required column from original dataset.
+Step 3. Extract the indice of the measurements on the mean and standard deviation.
 
-Step 6. Append subjects and label to target matrix.
+Here we extract the indice that variables' name include "mean" anf "std" with grep().
+* meanIdx: The indice of the measurements on the mean
+* stdIdx: The indice of the measurements on the standard deviation.
+* targetIdx : The union of meanIdx and stdIdx
 
-Step 7. Extract descriptive activity names from activity label.txt and then mapping it to target dataset.
+Step 4. Extract required column from original dataset.
 
-Step 8. Calcualte the average of each variable for each activity and each subject.
+Here we extract sub-matrix according to the indices in previous step with select().
+* targetMatrix: The sub-matrix we want.
 
-Step 9. Arrange result by subject and then write result to file.
+Step 5. Append subjects and label to target matrix.
+
+Here we combine the "label" and "subject" to target matrix with rbind() and cbind().
+
+Step 6. Extract descriptive activity names from activity label.txt and then mapping it to target dataset.
+
+Here we use mutate() to add "activity" variable into target matrix.
+
+Step 7. Calcualte the average of each variable for each activity and each subject.
+
+Here we use two for loop to travese target matrix and calculate the average of all mean/std measurment in each subject with different activity. First we use filter() to find suitable sub-matrix. And then we use apply() to calculat the average of each measurement. Finally we append its object and activity  variables to generate new record. And then use rbind() to accumlate result.
+
+Step 8. Arrange result by subject and then write result to file.
+
+Here we use write.table() to output our result.
