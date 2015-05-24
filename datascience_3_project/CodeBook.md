@@ -44,7 +44,9 @@ The following files are available for the train and test data. Their description
 
 ###Guide to create the tidy data file
 Step 1. Extract feature names from feature.txt
+
 Step 2. Load tran data and test data into tables
+
 Step 3. Merge training/test set and training/test labels
 Step 4. Extract the indice of the measurements on the mean and standard deviation.
 Step 5. Extract required column from original dataset.
