@@ -89,9 +89,8 @@ fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-
-std(): Standard deviation
+*mean(): Mean value
+*std(): Standard deviation
 
 mad(): Median absolute deviation 
 
